@@ -1,0 +1,27 @@
+.generatorBody{
+    padding: 3rem;
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color-primary-darkest);
+    border-radius: 5px;
+    box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+
+.passwordArea{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: var(--color-secondary-darker);
+    justify-content: center;
+    display: flex;
+    border: 10px var(--color-primary-darker);
+    border-style: solid;
+    border-radius: 15px;
+    box-shadow: 5px 5px 6px 3px rgb(0 0 0 / 20%);
+    padding: 1rem 1rem 1rem 1rem;
+}

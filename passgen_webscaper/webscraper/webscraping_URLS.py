@@ -1,0 +1,1 @@
+ANIMAL_WEBURL = "https://a-z-animals.com/animals/"

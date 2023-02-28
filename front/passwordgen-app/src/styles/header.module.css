@@ -1,0 +1,8 @@
+.header{
+    background-color: var(--color-secondary);
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2);
+    /* color: rgb(var(--color-primary-darker)) !important; */
+}
