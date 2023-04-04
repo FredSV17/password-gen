@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Select, { components } from "react-select";
-import styles from '@/styles/inputs/dropdownCheckbox.module.css'
-
 
 export default function DropdownCheckbox(props) {
   const [selectedOptions, setSelectedOptions] = useState([]);

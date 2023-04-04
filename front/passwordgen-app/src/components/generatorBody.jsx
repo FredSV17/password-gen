@@ -1,6 +1,6 @@
-import styles from '@/styles/generatorBody.module.css'
+import styles from 'src/styles/generatorBody.module.css'
 import PasswordParam  from './inputs/passwordParam';
-import { getPassword } from '@/services/passwordGen';
+import { getPassword } from 'src/services/passwordGen';
 import 'react-dropdown/style.css';
 import { Component } from 'react';
 import GenerateButton from './generateButton';

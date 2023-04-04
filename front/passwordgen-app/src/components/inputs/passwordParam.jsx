@@ -1,4 +1,4 @@
-import styles from '@/styles/inputs/passwordParam.module.css'
+import styles from 'src/styles/inputs/passwordParam.module.css'
 import { useState } from 'react';
 import DropdownCheckbox from '../etc/dropdownCheckbox';
 

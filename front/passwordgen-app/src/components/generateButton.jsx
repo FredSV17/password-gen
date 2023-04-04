@@ -1,4 +1,4 @@
-import styles from '@/styles/generateButton.module.css'
+import styles from 'src/styles/generateButton.module.css'
 
 function GenerateButton(props) {
     return ( 

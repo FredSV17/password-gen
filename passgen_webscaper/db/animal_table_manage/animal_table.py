@@ -17,7 +17,7 @@ async def find_one(id: str):
     found_animal = db["animal"].find_one({"_id": id})
     return found_animal
 
-async def get_random_one():    
+async def get_random_one():
     cursor = db["animal"].aggregate([{ "$sample": { "size": 1 } }]).next()
     animal = cursor['name']
     return animal

@@ -1,4 +1,4 @@
-import styles from '@/styles/inputs/paramsArea.module.css'
+import styles from 'src/styles/inputs/paramsArea.module.css'
 
 function ParamsArea(props) {
     return (
