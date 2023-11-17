@@ -5,7 +5,7 @@ import pytest
 from api.api_models.animal import AnimalModel
 
 from db.db_manager import drop_database
-from db.animal_table_manage.animal_table import insert_one
+from db.table_manage.animal_table import insert_one
 
 from main import app
 import pytest

@@ -3,13 +3,45 @@ from typing import List, Optional
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from fastapi import status
-from db.animal_table_manage.animal_table import get_random_one
+from db.table_manage.animal_table import get_random_animal
 from wonderwords import RandomWord
 from random import randint
 import names
 
+from db.table_manage.mythical_creature_table import get_random_mythical_creature
+
 router = APIRouter()
 
+def handle_separators(sentence, separator):
+    if separator == "CAMELCASE":
+        return sub(r"(_|-)+", " ", sentence).title().replace(" ", "")
+    else:
+        return sentence.replace(" ",separator).lower()
+
+async def handle_substantive_type(substantive_type: str):
+    if substantive_type == "ANIMAL":
+        return await get_random_animal()
+    elif substantive_type == "MYTHICAL":
+        return await get_random_mythical_creature()
+    elif substantive_type == "PERSON":
+        return names.get_full_name()
+    elif substantive_type == "NOUN":
+        r = RandomWord()
+        return r.word(include_parts_of_speech=['noun'])
+    elif substantive_type == "RANDOM":
+        rand = randint(1,4)
+        if rand == 2:
+            return names.get_full_name()
+        elif rand == 3:
+            r = RandomWord()
+            return r.word(include_parts_of_speech=['noun'])
+        elif rand == 4:
+            return await get_random_mythical_creature()
+        else:
+            return await get_random_animal()
+    else:
+        raise Exception
+    
 @router.get("/hello",summary="Hello, start scraping!")
 def hello_from_animal():
     return "Hello from animal!"
@@ -38,28 +70,3 @@ async def password_gen(substantive_type: Optional[str] = "ANIMAL",parts_of_speec
     password = f'{sentence}{special_character}{str(randint(min_num_rand,max_num_rand))}'
     return JSONResponse(status_code=status.HTTP_200_OK, content=password)
 
-def handle_separators(sentence, separator):
-    if separator == "CAMELCASE":
-        return sub(r"(_|-)+", " ", sentence).title().replace(" ", "")
-    else:
-        return sentence.replace(" ",separator).lower()
-
-async def handle_substantive_type(substantive_type: str):
-    if substantive_type == "ANIMAL":
-        return await get_random_one()
-    elif substantive_type == "PERSON":
-        return names.get_full_name()
-    elif substantive_type == "NOUN":
-        r = RandomWord()
-        return r.word(include_parts_of_speech=['noun'])
-    elif substantive_type == "RANDOM":
-        rand = randint(1,3)
-        if rand == 2:
-            return names.get_full_name()
-        elif rand == 3:
-            r = RandomWord()
-            return r.word(include_parts_of_speech=['noun'])
-        else:
-            return await get_random_one()
-    else:
-        raise Exception

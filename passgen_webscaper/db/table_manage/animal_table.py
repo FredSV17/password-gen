@@ -10,18 +10,15 @@ async def insert_one(animal: AnimalModel):
     new_animal = db["animal"].insert_one(animal_json_encoder)
     return new_animal
 
+#deprecated
 def parse_json(data):
     return loads(dumps(data))
 
-async def find_one(id: str):    
-    found_animal = db["animal"].find_one({"_id": id})
-    return found_animal
-
-async def get_random_one():
+async def get_random_animal():
     cursor = db["animal"].aggregate([{ "$sample": { "size": 1 } }]).next()
     animal = cursor['name']
     return animal
 
-
-def drop_collection():
-    db["animal"].drop()
+def drop_collection_if_exists():
+    if db["animal"] is not None:
+        db["animal"].drop()
