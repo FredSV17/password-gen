@@ -21,7 +21,7 @@ def handle_separators(sentence, separator):
 async def handle_substantive_type(substantive_type: str):
     if substantive_type == "ANIMAL":
         return await get_random_animal()
-    elif substantive_type == "MYTHICAL":
+    elif substantive_type == "MYTHICAL_CREATURE":
         return await get_random_mythical_creature()
     elif substantive_type == "PERSON":
         return names.get_full_name()

@@ -4,7 +4,7 @@ from fastapi import Body
 from fastapi.responses import JSONResponse
 from fastapi import Body, status
 from webscraper.webscraping_setup import start_webscraping
-from db.table_manage.mythical_creature_table import insert_one, drop_collection_if_exists
+from db.table_manage.mythical_creature_table import drop_collection_if_exists
 
 
 router = APIRouter()

@@ -32,5 +32,4 @@ async def hello():
 
 @app.on_event("shutdown")
 async def shutdown_remove_db():
-    if os.environ["API_TEST"]:
-        drop_database()
+    drop_database()

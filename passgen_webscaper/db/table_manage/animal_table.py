@@ -5,7 +5,7 @@ from db.db_manager import db
 from bson.json_util import loads,dumps
 from fastapi.encoders import jsonable_encoder
 
-async def insert_one(animal: AnimalModel):
+async def insert_one_animal(animal: AnimalModel):
     animal_json_encoder = jsonable_encoder(animal)
     new_animal = db["animal"].insert_one(animal_json_encoder)
     return new_animal

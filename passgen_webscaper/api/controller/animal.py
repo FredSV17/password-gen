@@ -4,7 +4,7 @@ from fastapi import Body
 from fastapi.responses import JSONResponse
 from fastapi import Body, status
 from webscraper.webscraping_setup import start_webscraping
-from db.table_manage.animal_table import insert_one, drop_collection_if_exists
+from db.table_manage.animal_table import drop_collection_if_exists
 
 
 router = APIRouter()
@@ -22,8 +22,8 @@ def hello_from_animal():
 #    return JSONResponse(status_code=status.HTTP_201_CREATED, content=created_animal)
 
 
-@router.post("/webscrape",summary="Animal name webscraping")
-async def webscrape_animal():
+@router.post("/webscraping",summary="Animal name webscraping")
+async def animal_webscraping():
     drop_collection_if_exists()
     await start_webscraping("ANIMAL",ANIMAL_WEBURL)
     return JSONResponse(status_code=status.HTTP_200_OK, content="")

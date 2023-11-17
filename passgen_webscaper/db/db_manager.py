@@ -4,7 +4,7 @@ import pymongo
 
 client = pymongo.MongoClient(os.environ["MONGODB_URL"])
 
-if os.environ["API_TEST"] == True:
+if os.environ["API_TEST"] == "1":
     db = client["testpasswordgen"]
 else:    
     db = client["passwordgen"]
