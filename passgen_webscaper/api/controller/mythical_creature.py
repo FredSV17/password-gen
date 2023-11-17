@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from api.api_models.mythical_creature import MythicalCreatureModel
+from api.models.mythical_creature import MythicalCreatureModel
 from fastapi import Body
 from fastapi.responses import JSONResponse
 from fastapi import Body, status

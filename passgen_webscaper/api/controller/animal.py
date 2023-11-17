@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from api.api_models.animal import AnimalModel
+from api.models.animal import AnimalModel
 from fastapi import Body
 from fastapi.responses import JSONResponse
 from fastapi import Body, status

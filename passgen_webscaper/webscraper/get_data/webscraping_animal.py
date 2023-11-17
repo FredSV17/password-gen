@@ -1,4 +1,4 @@
-from api.api_models.animal import AnimalModel
+from api.models.animal import AnimalModel
 from db.table_manage.animal_table import insert_one
 from selenium.webdriver.common.by import By
 

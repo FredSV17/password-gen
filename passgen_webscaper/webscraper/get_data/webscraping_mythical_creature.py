@@ -1,4 +1,4 @@
-from api.api_models.mythical_creature import MythicalCreatureModel
+from api.models.mythical_creature import MythicalCreatureModel
 from db.table_manage.mythical_creature_table import insert_one
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup

@@ -42,7 +42,7 @@ async def handle_substantive_type(substantive_type: str):
     else:
         raise Exception
     
-@router.get("/hello",summary="Hello, start scraping!")
+@router.get("/hello",summary="Hello, start webscraping!")
 def hello_from_animal():
     return "Hello from animal!"
 

@@ -1,6 +1,6 @@
 import json
 from typing import List
-from api.api_models.animal import AnimalModel
+from api.models.animal import AnimalModel
 from db.db_manager import db
 from bson.json_util import loads,dumps
 from fastapi.encoders import jsonable_encoder
