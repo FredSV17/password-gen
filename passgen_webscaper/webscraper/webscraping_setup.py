@@ -6,8 +6,9 @@ from selenium.webdriver.chrome import options
 from webdriver_manager.chrome import ChromeDriverManager
 
 async def start_webscraping(type,url):
-    #options.headless = True
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())#,options=options)
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=options)
 
     driver.get(url)
     if type == "ANIMAL":
