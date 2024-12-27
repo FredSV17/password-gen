@@ -11,5 +11,5 @@ Where:
 
 The following links were used to scrape data for this project:
 
-- [Yokai Finder](https://yokai.com/finder/) - Used for collecting the names of different Yokai entities.  
-- The collected data is solely used for educational and non-commercial purposes.
+- [Yokai Finder](https://yokai.com/finder/) - Used for collecting the names of different Yokai entities.
+  -  The collected data is solely used for educational and non-commercial purposes.
