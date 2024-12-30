@@ -11,5 +11,6 @@ Where:
 
 The following links were used to scrape data for this project:
 
-- [Yokai Finder](https://yokai.com/finder/) - Used for collecting the names of different Yokai entities.  
+- [Yokai Finder](https://yokai.com/finder/) - Used for collecting the names of different Yokai entities.
+- [List of animal names](https://en.wikipedia.org/wiki/List_of_animal_names) - Used for collecting the names of different existing animals.
 - The collected data is solely used for educational and non-commercial purposes.
