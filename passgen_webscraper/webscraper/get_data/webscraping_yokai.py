@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas
-from passgen_webscraper.db.table_manage.yokai_table import populate_yokai_table_csv
+from db.table_manage.yokai_table import populate_yokai_table_csv
 import re
 from logging_config import logger
 

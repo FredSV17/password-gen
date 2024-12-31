@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from api.controller import animal
-from api.controller import yokai
-from api.controller import password_gen
+from controller import animal
+from controller import yokai
+from controller import password_gen
 
 api_router = APIRouter()
 

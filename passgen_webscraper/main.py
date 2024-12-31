@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import api_router
+from routes.passgen_routes import api_router
 from logging_config import logger
 
 app = FastAPI()
