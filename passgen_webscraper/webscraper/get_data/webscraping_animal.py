@@ -2,7 +2,10 @@ from selenium.webdriver.common.by import By
 import pandas
 from logging_config import logger
 from db.table_manage.animal_table import populate_animal_table_csv
+import re
 
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt) 
 ANIMAL_WEBURL = 'https://en.wikipedia.org/wiki/List_of_animal_names'
 
 # Needs work
@@ -13,7 +16,8 @@ async def get_animal_data(driver):
     body = areas[2].find_element(By.TAG_NAME, 'tbody')
     rows = body.find_elements(By.TAG_NAME, 'tr')
     first_element_in_rows = [element.find_elements(By.TAG_NAME, 'td')[0].text
-                             if element.find_elements(By.TAG_NAME, 'td') != [] else "" for element in rows]
+                            for element in rows if element.find_elements(By.TAG_NAME, 'td') != []]
+    first_element_in_rows = list(map(lambda i : re.sub(r'^([\w]+[\r]{1}[\w]+|[\w]+).*', r'\1', i),first_element_in_rows))
     await populate_animal_table_csv(first_element_in_rows)
     #name_list = navigate_through_areas(driver,areas,0)
     
