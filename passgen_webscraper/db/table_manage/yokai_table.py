@@ -14,4 +14,4 @@ async def get_random_yokai():
     
 async def populate_yokai_table_csv(name_list: list):
     df = pandas.DataFrame(data={"yokai_names": name_list})
-    df.to_csv("./data/animal.csv",index=False)
+    df.to_csv("./db/data/animal.csv",index=False)

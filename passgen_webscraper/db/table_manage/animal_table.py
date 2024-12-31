@@ -15,4 +15,4 @@ async def get_random_animal():
     
 async def populate_animal_table_csv(name_list: list):
     df = pandas.DataFrame(data={"animal": name_list})
-    df.to_csv("./data/animal.csv",index=False)
+    df.to_csv("./db/data/animal.csv",index=False)
