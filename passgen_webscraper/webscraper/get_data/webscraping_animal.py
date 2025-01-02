@@ -17,8 +17,9 @@ async def get_animal_data(driver):
     rows = body.find_elements(By.TAG_NAME, 'tr')
     first_element_in_rows = [element.find_elements(By.TAG_NAME, 'td')[0].text
                             for element in rows if element.find_elements(By.TAG_NAME, 'td') != []]
-    first_element_in_rows = list(map(lambda i : re.sub(r'^([\w]+[\r]{1}[\w]+|[\w]+).*', r'\1', i),first_element_in_rows))
-    await populate_animal_table_csv(first_element_in_rows)
+    # Problem: Need to remove newline and any characters beyond
+    new_list = list(map(lambda i: re.sub(r'([\n]|[^\w^ ]).*', '', i).strip(), first_element_in_rows))
+    await populate_animal_table_csv(new_list)
     #name_list = navigate_through_areas(driver,areas,0)
     
     #populate_yokai_table_csv(name_list)
