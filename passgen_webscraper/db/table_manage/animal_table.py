@@ -6,12 +6,12 @@ from pandas import DataFrame
 import pandas
 
 
-ANIMAL_TABLE = 'passgen_webscraper/data/animal.csv'
+ANIMAL_TABLE = 'db/data/animal.csv'
 
 async def get_random_animal():
     with open(ANIMAL_TABLE) as f:
         reader = csv.reader(f)
-        return random.choice(list(reader))
+        return random.choice(list(reader))[0]
     
 async def populate_animal_table_csv(name_list: list):
     df = pandas.DataFrame(data={"animal": name_list})

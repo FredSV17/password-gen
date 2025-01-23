@@ -5,12 +5,12 @@ import csv
 import random
 import pandas
 
-YOKAI_TABLE = 'passgen_webscraper/data/yokai.csv'
+YOKAI_TABLE = 'db/data/yokai.csv'
 
 async def get_random_yokai():
     with open(YOKAI_TABLE) as f:
         reader = csv.reader(f)
-        return random.choice(list(reader))
+        return random.choice(list(reader))[0]
     
 async def populate_yokai_table_csv(name_list: list):
     df = pandas.DataFrame(data={"yokai_names": name_list})
