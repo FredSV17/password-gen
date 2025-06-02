@@ -13,7 +13,7 @@ async def start_webscraping(type):
     # Optional: Configure Chrome options (e.g., headless mode)
     # Set up Chrome options for headless mode
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")  # Run in headless mode
+    chrome_options.add_argument("--headless")  # Run in headless mode
     chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (optional but recommended)
     chrome_options.add_argument("--window-size=1920x1080")  # Set window size (helps with rendering issues)
 

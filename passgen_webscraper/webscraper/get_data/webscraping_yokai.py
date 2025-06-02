@@ -15,7 +15,7 @@ async def get_yokai_page(driver):
     areas = driver.find_elements(By.XPATH,"//div[@class='japanHtml5Map-areas-item']")
     name_list = navigate_through_areas(driver,areas,0)
     
-    populate_yokai_table_csv(name_list)
+    await populate_yokai_table_csv(name_list)
     
     
 

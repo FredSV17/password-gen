@@ -1,4 +1,3 @@
-from db.db_manager import db
 from bson.json_util import loads,dumps
 from fastapi.encoders import jsonable_encoder
 import csv
@@ -14,4 +13,4 @@ async def get_random_yokai():
     
 async def populate_yokai_table_csv(name_list: list):
     df = pandas.DataFrame(data={"yokai_names": name_list})
-    df.to_csv("./db/data/animal.csv",index=False)
+    df.to_csv(f"./{YOKAI_TABLE}",index=False)
