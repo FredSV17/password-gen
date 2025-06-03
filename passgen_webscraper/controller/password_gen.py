@@ -42,9 +42,6 @@ async def handle_substantive_type(noun_type: str):
     else:
         raise Exception
     
-@router.get("/hello",summary="Hello, start scraping!")
-def hello_from_animal():
-    return "Hello from passgen!"
 
 
 @router.get("/generate",summary="Password gen")

@@ -1,0 +1,33 @@
+# --- Core Web Scraping ---
+beautifulsoup4==4.13.4
+soupsieve==2.7
+httpx==0.28.1
+python-multipart==0.0.20  
+selenium==4.33.0          
+
+# --- Data Handling ---
+pandas==2.2.3
+numpy==2.0.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.2
+
+# --- Logging & CLI Display ---
+rich==14.0.0
+colorama==0.4.6
+Pygments==2.19.1
+
+# --- Configuration & Environment ---
+python-dotenv==1.1.0
+
+# --- Random Data Generation ---
+wonderwords==2.2.0
+names==0.3.0
+
+# --- FastAPI Interface ---
+fastapi==0.115.12
+uvicorn==0.34.3
+starlette==0.46.2
+pydantic==2.11.5
+pydantic_core==2.33.2
+annotated-types==0.7.0
